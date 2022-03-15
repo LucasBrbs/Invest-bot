@@ -1,1 +1,5 @@
-print("Hello, world!")
+import Foundation
+
+let investbot = DecoderBank()
+investbot.app()
+
