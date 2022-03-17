@@ -1,22 +1,35 @@
 import CoreFoundation
 import Foundation
 
+struct FinanceResponse: Codable {
+    let quoteResponse: QuoteResponse
+}
+
+// MARK: - QuoteResponse
+struct QuoteResponse: Codable {
+    let result: [Result]
+}
+
+// MARK: - Result
+struct Result: Codable {
+    let symbol: String
+    let regularMarketPrice: Double
+    let regularMarketOpen: Double
+    let shortName: String
+}
+
 class DecoderBank{
-    
-//    struct Get: Codable{
-//        let symbol: String
-//    }
     
     func app(){
         let runLoop = CFRunLoopGetCurrent()
         
-//        var url = URL(string: "https://yfapi.net/v6/finance/quote")!
-//
-//        var querystring = [
-//            "symbols":"AMD",
-//            "region":"US",
-//            "lang":"en"
-//        ]
+        //        var url = URL(string: "https://yfapi.net/v6/finance/quote")!
+        //
+        //        var querystring = [
+        //            "symbols":"AMD",
+        //            "region":"US",
+        //            "lang":"en"
+        //        ]
         
         let headers = [
             "x-api-key" : "DJcbbxcuNt96LScWh0zuw4Z3DsrrwsG41H0aDOnh"
@@ -35,18 +48,20 @@ class DecoderBank{
         request.allHTTPHeaderFields = headers
         request.httpMethod = "GET"
         
-        let task = URLSession.shared.dataTask(with: request, completionHandler: { (data,response,error) in if let data = data {
-                do{
-                    let object = try! JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                    print(object)
-//                    let res = try JSONDecoder().decode([Get].self, from:data)
-//                    print("PRIMEIRO: \(res)")
-
+        
+        let task = URLSession.shared.dataTask(with: request, completionHandler: { (data,response,error) in
+            if let data = data {
+                do {
+                    let response = try JSONDecoder().decode(FinanceResponse.self, from: data)
+                    print("Name\t\t     Actual Price\t Market Open")
+                    print("\(response.quoteResponse.result[0].shortName)\t \t \(response.quoteResponse.result[0].regularMarketPrice)\t \t \t \(response.quoteResponse.result[0].regularMarketOpen)")
+                    
+                    
                     CFRunLoopStop(runLoop)
                 }
-//            catch let error{
-//                    print(error)
-//                }
+                catch {
+                    print(error)
+                }
             }
         })
         task.resume()
