@@ -22,7 +22,7 @@ struct RecommendedFinances: Codable{
     let finance: Finance
     
     struct Finance: Codable{
-        let result: Result
+        let result: [Result]
     }
     
     
@@ -62,16 +62,23 @@ class DecoderBank{
             let opt = readLine()
             switch opt{
             case "1":
+                print(
+"""
+//Examples of stocks you can choose//
+//AAPL MSFT GOOG AMZN TSLA NVDA FB//
+""")
+                print("Choose one stock")
+                let action = readLine()
                 let runLoop = CFRunLoopGetCurrent()
                 let headers = [
-                    "x-api-key" : "bIyEkCuO7A4AUpgQ3QCj746X9zpzSUKV6BH3ckn2"
+                    "x-api-key" : "xLHIOi80FB8PjsuuCVZDka9gK7mZ3Qur2Cyyhl3k"
                 ]
                 
                 var components = URLComponents(string: "https://yfapi.net/v6/finance/quote")!
                 
                 components.queryItems = [
-                    URLQueryItem(name: "x-api-key", value: "bIyEkCuO7A4AUpgQ3QCj746X9zpzSUKV6BH3ckn2"),
-                    URLQueryItem(name: "symbols", value: "AAPL,ADBE,ABNB,AMZN,AMD,FB"),
+                    URLQueryItem(name: "x-api-key", value: "xLHIOi80FB8PjsuuCVZDka9gK7mZ3Qur2Cyyhl3k"),
+                    URLQueryItem(name: "symbols", value: "\(action!)"),
                     URLQueryItem(name: "region", value: "US"),
                     URLQueryItem(name: "lang", value: "en")
                 ]
@@ -88,7 +95,7 @@ class DecoderBank{
                             print("Symbol\t Actual Price\t Market Open\t Name")
                             
                             for result in response.quoteResponse.result {
-                                print("\(result.symbol) \t \(result.regularMarketPrice)\t\t\t\(result.regularMarketOpen)\t\t\t \(result.shortName)")
+                                print("\(result.symbol) \t \(result.regularMarketPrice)\t\t\(result.regularMarketOpen)\t\t\t \(result.shortName)")
                                 
                             }
                             
@@ -106,13 +113,13 @@ class DecoderBank{
             case "2":
                 let runLoop = CFRunLoopGetCurrent()
                 let headers = [
-                    "x-api-key" : "bIyEkCuO7A4AUpgQ3QCj746X9zpzSUKV6BH3ckn2"
+                    "x-api-key" : "xLHIOi80FB8PjsuuCVZDka9gK7mZ3Qur2Cyyhl3k"
                 ]
                 
                 var components = URLComponents(string:"https://yfapi.net/v6/finance/recommendationsbysymbol/AAPL")!
                 
                 components.queryItems = [
-                    URLQueryItem(name: "x-api-key", value: "bIyEkCuO7A4AUpgQ3QCj746X9zpzSUKV6BH3ckn2"),
+                    URLQueryItem(name: "x-api-key", value: "xLHIOi80FB8PjsuuCVZDka9gK7mZ3Qur2Cyyhl3k"),
                     URLQueryItem(name: "symbol", value: "AAPL"),
                 ]
                 
@@ -127,7 +134,7 @@ class DecoderBank{
                             let response = try JSONDecoder().decode(RecommendedFinances.self, from: data)
                             print("Symbol\t  Score")
                             
-                            for result in response.finance.result.recommendedSymbols{
+                            for result in response.finance.result.first!.recommendedSymbols {
                                 print("\(result.symbol)\t \(result.score)")
                                 
                             }
