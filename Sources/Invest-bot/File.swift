@@ -50,7 +50,8 @@ class DecoderBank{
 
         
         print("""
-                                Welcome
+            Welcome InvestBot whats your action today?
+        
             1.Select 1 to visualize investings
         
             2.Select 2 to visualize top 5 actual actions based by score
