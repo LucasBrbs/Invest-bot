@@ -1,6 +1,7 @@
 import CoreFoundation
 import Foundation
 
+
 struct FinanceResponse: Codable {
     let quoteResponse: QuoteResponse
     
@@ -56,7 +57,7 @@ class DecoderBank{
         
             2.Select 2 to visualize top 5 actual actions based by score
         
-            3.Press any other button to shotdown the application
+            3.Press any other button to shutdown the application
         """)
         
         while true {
@@ -108,9 +109,10 @@ class DecoderBank{
                         }
                     }
                 })
+                print("===================================================")
                 task.resume()
                 CFRunLoopRun()
-                
+                return app()
             case "2":
                 let runLoop = CFRunLoopGetCurrent()
                 let headers = [
@@ -150,7 +152,10 @@ class DecoderBank{
                 })
                 task.resume()
                 CFRunLoopRun()
+                return app()
+                print("===================================================")
             default:
+                print("Exit")
                 break
         }
         

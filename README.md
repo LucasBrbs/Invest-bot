@@ -1,25 +1,24 @@
-<h1 align="center"> Invest-bot </h1>
+<h1 align="center"> 📈 Invest-bot </h1> 
 
-# Documentação 
+![GitHub Org's stars](https://img.shields.io/github/stars/LucasBrbs?style=social)
+
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
+
+# 📁 Documentação 
     
 ## Esse read.me será divido em 2 partes
  - Documentação 
  - CBL (método usado para o desenvolvimento da aplicação)
     
-## A ideia
+## ❕ A ideia
 InvestBot nasceu com um ideal de consultar a API do yahoo para verificar a validade dos investimentos
 
-## Funcionalidades
+## 🖥️ Funcionalidades
 As atuais funcionalidades do aplicativo são verificaçoes simples dos preços do mercado e 
 na segunda funcao ele coloca os 5 melhores investimentos atuais usando os scores, uma forma de validador de ação
 na bolsa de valores
 
-## Aprendizado
-Uma das minhas muitas duviadas dentro de programacao é a consulta de API esse sendo um dos meus maiores desafios atualmente
-me senti na obrigacao de escolher um projeto que podesse sanar o maximo possivel a minha duvida e me exercitasse nessa nova
-linguagem o swift 
-
-## Instalação
+## 💿 Instalação
 Para instalar e executar o InvestBot siga os passos
 
     git clone https://github.com/LucasBrbs/Invest-bot.git
@@ -32,18 +31,20 @@ Então realize estes comandos para buildar o projeto e executalo
 a api consultada foi a yahoo invest, por sinaal uma api muito bem estruturada e com muitos dados interessantes para quem 
 conhece sobre investimentos
 
-## Autor
-Lucas Barbosa de Oliveira ( LucasBrBs ) 
+## 👋 Autor
+[<h3>lucas Barbosa de Oliveira</h3>](https://github.com/camilafernanda)
 
-## Demonstração
-    Primeiro passo entrar na aplicação
+## 📖 Demonstração
+   Primeiro passo entrar na aplicação. 
+   Segundo passo selecionar alguma das opções. 
+    <img width="466" alt="1" src="https://user-images.githubusercontent.com/47783422/160617576-21df670a-e9ab-47a4-9de4-764090cf57f2.png">
     
-    Segundo passo selecionar alguma das opções
-    
-    A primeira opção te leva para um consultor de dados da ação
-    
-    A segunda para as 5 melhores ações do momento para serem compradas baseandose no Score
-    
+   A primeira opção te leva para um consultor de dados da ação. 
+    <img width="565" alt="2" src="https://user-images.githubusercontent.com/47783422/160617682-7ec05601-d2cc-49c5-bbb1-d89d0f548a27.png">
+
+   A segunda para as 5 melhores ações do momento para serem compradas baseandose no Score. 
+    <img width="566" alt="3" src="https://user-images.githubusercontent.com/47783422/160617769-5232a624-5968-4129-9939-f6ee00a298db.png">
+
 
  
 <h1> CBL </h1>
@@ -62,7 +63,7 @@ Como swift pode impactar na minha vida?
 
 Aprender swift através da construção de um programa de terminal ou script que seja útil para mim. 
 
-## Investigate
+## 🔍 Investigate
 
 ### Guiding Questions
 - Como eu posso consultar a bolsa de valores para melhorar meus investimentos e ter uma visão mais facil deles?
@@ -92,16 +93,9 @@ Aprender swift através da construção de um programa de terminal ou script que
     
 
 ### Challenge
-    Fazer um programa que consiga pesquisar sobre investimentos.
-
-### Act
-
-[https://github.com/JoanWilson/Setterfolder](https://github.com/JoanWilson/Setterfolder)
-
-![Screenshot 2022-03-23 at 11.15.52.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2fc96ea6-7000-42e0-8d57-238e99794fd8/Screenshot_2022-03-23_at_11.15.52.png)
-
-![Screenshot 2022-03-23 at 11.16.09.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/49eb46cd-f201-49f5-b3be-78012044865b/Screenshot_2022-03-23_at_11.16.09.png)
+   Fazer um programa que consiga pesquisar sobre investimentos.
 
 ### Resources
 
-[Apple Developer Documentation](https://developer.apple.com/documentation/foundation/filemanager)
+- Swift apple documentation
+
