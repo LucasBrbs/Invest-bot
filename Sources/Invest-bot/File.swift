@@ -51,6 +51,7 @@ class DecoderBank{
 
         
         print("""
+        ===============================================================
             Welcome InvestBot whats your action today?
         
             1.Select 1 to visualize investings
@@ -58,6 +59,7 @@ class DecoderBank{
             2.Select 2 to visualize top 5 actual actions based by score
         
             3.Press any other button to shutdown the application
+        ===============================================================
         """)
         
         while true {
@@ -150,10 +152,11 @@ class DecoderBank{
                         }
                     }
                 })
+                print("===================================================")
                 task.resume()
                 CFRunLoopRun()
                 return app()
-                print("===================================================")
+                
             default:
                 print("Exit")
                 break
