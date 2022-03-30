@@ -159,7 +159,7 @@ class DecoderBank{
                 
             default:
                 print("Exit")
-                break
+                return
         }
         
         
