@@ -1,4 +1,5 @@
 <h1 align="center"> 📈 Invest-bot </h1> 
+<img width="466" alt="1" align="center" src="https://github.com/LucasBrbs/Invest-bot/blob/main/Images/InvestBot.png?raw=true">
 
 ![GitHub Org's stars](https://img.shields.io/github/stars/LucasBrbs?style=social)
 
