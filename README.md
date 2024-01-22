@@ -35,7 +35,7 @@ a api consultada foi a yahoo invest, por sinaal uma api muito bem estruturada e 
 conhece sobre investimentos
 
 ## 👋 Autor
-[<h3>lucas Barbosa de Oliveira</h3>](https://github.com/camilafernanda)
+[<h3>lucas Barbosa de Oliveira</h3>](https://github.com/lucasbrbs)
 
 ## 📖 Demonstração
    Primeiro passo entrar na aplicação. 
